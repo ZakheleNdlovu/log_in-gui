@@ -33,6 +33,9 @@ class logInPrompt():
                 messagebox.showinfo('success', 'Sign in successful')
                 self.name_label_entry.delete(0, 'end')
                 self.password_entry.delete(0, 'end')
+                self.root.destroy()
+                a = mainScreen()
+                a.run()
 
         self.root = tkinter.Tk()
         self.root.geometry('400x500')
@@ -61,7 +64,6 @@ class logInPrompt():
 class signUpPrompt():
     global accounts
     def __init__(self):
-
 
         def register():
             self.root.destroy()
@@ -118,6 +120,26 @@ class signUpPrompt():
 
     def run(self):
         self.root.mainloop()
+
+class mainScreen():
+    global accounts
+    def __init__(self):
+
+        root = tkinter.Tk()
+        root.geometry('800x500')
+        root.configure(bg='green')
+
+        display = tkinter.Label(root, font=('Ink Free',20), text='Congratulations, You have successfully signed in!', bg='green', fg='white')
+        display.place(x=130, y=180)
+
+        root.mainloop()
+
+    def run(self):
+        self.root.mainloop()
+
+
+
+
 
 
 a = signUpPrompt()
